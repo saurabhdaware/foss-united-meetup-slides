@@ -1,0 +1,692 @@
+{{
+  import { EXPERIMENTAL_md as md } from 'vite-plugin-md-to-html';
+  import prosAndCons from './_pros-cons.abell';
+}}
+<html>
+<head>
+  <title>In the World of JS Frameworks, It's an HTML Framework - Saurabh Daware</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="In the World of JS Frameworks, It's an HTML Framework - Saurabh Daware" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@saurabhdawaree" />
+
+  <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1687452081/Screenshot_2023-06-22_at_10.10.51_PM_rhmvdg.png"/>
+  <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1687452081/Screenshot_2023-06-22_at_10.10.51_PM_rhmvdg.png"/>
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="300" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h3>👋🏼</h3>
+      </section>
+
+      <section>
+        <div class="intro-slide" style="display: flex; gap: 24px; align-items: center; justify-content: center">
+          <div style="display: inline-block">
+            <div style="text-align: center">
+              <img class="profile-picture" src="/profile-picture.png" width="80px">
+              <div>
+                <h2>Saurabh Daware</h2>
+                <div class="intro-job-title">
+                  <p>Senior Frontend Engineer</p>
+                  <img width="120px" src="/razorpay-logo.svg" />
+                </div>
+                <ul class="socials">
+                  <li><img width="18px" src="/github-logo.svg" /> saurabhdaware</li>
+                  <li><img width="16px" src="/twitter-birb.png" /> saurabhdawaree</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <img width="700px" class="bordered" src="/first-tweet-abell.png" alt="I want to write astronomy articles... where should I write them?" />
+      </section>
+
+      <section>
+        <ul>
+          <li class="fragment">Flexible</li>
+          <li class="fragment">Smaller Learning Curve</li>
+          <li class="fragment">Reusability, Looping, Conditions, etc</li>
+        </ul>
+      </section>
+
+
+      <section data-auto-animate>
+        {{ prosAndCons({ unchecked: [2], logo: 'html' }) }}
+      </section>
+
+      <section data-auto-animate>
+        {{ prosAndCons({ unchecked: [0, 1], logo: 'gatsby' }) }}
+      </section>
+
+      <section data-auto-animate>
+        {{ prosAndCons({ unchecked: [1], logo: 'jekyll' }) }}
+      </section>
+
+      <section>
+       {{
+          md`
+          ~~~abell
+          {{
+            const fs = require('fs');
+            const markdownToHTML = require('markdown-to-html');
+
+            const contentMarkdown = fs.readFileSync('./content.md', 'utf-8');
+          }}
+
+          <html>
+          <body>
+            {{ markdownToHTML(contentMarkdown) }}
+          </body>
+          </html>
+          ~~~
+          `
+        }}
+      </section>
+
+      <section>
+        <img width="700px" alt="Created Abell Org" src="/create-abell-org.png" />
+      </section>
+
+      <section>
+        <video class="r-stretch bordered" data-autoplay src="/abell-v0-1080p.mov"></video>
+        <img class="fragment" style="position: fixed;bottom: 0px; right: 0px" src="/happie.gif" />
+      </section>
+
+      <section>
+       {{
+          md`
+          ~~~abell
+          <html>
+          <body>
+            <nav>navbar</nav>
+            <main>Hi FOSS United!</main>
+          </body>
+          </html>
+          ~~~
+          `
+        }}
+      </section>
+
+      <section>
+        <div class="display-flex">
+          <div class="flex-2">
+          {{
+            md`
+            ~~~abell
+            <!-- index.abell -->
+            {{
+              const Navbar = require('./components/Navbar.abell');
+            }}
+            <html>
+            <body>
+              <Navbar url="/" />
+              <main>Hi FOSS United!</main>
+            </body>
+            </html>
+            ~~~
+            `
+          }}
+          </div>
+          <div class="flex-1">
+          {{
+            md`
+            ~~~abell
+            <!-- Navbar.abell -->
+            <AbellComponent>
+              <nav>I am Navbar</nav>
+            </AbellComponent>
+            ~~~
+            `
+          }}
+          </div>
+        </div>
+      </section>
+
+      <section>
+       {{
+          md`
+          ~~~abell
+            <!-- Navbar.abell -->
+            <AbellComponent>
+              <nav>I am Navbar</nav>
+            </AbellComponent>
+          ~~~
+          `
+        }}
+      </section>
+
+      <section>
+       {{
+          md`
+          ~~~abell
+            <!-- Navbar.abell -->
+            <AbellComponent>
+              <nav>I am Navbar</nav>
+
+              <stylе>
+                nav {
+                  background-color: red;
+                }
+              </stylе>
+            </AbellComponent>
+          ~~~
+          `
+        }}
+      </section>
+
+
+      <section>
+       {{
+          md`
+          ~~~abell
+            <!-- Navbar.abell -->
+            <AbellComponent>
+              <nav>I am Navbar</nav>
+
+              <stylе>
+                nav {
+                  background-color: red;
+                }
+              </stylе>
+
+              <script>
+                document.querySelector('nav').innerHTML = 'Client-Side Changes';
+              </script>
+            </AbellComponent>
+          ~~~
+          `
+        }}
+      </section>
+
+
+      <section>
+       {{
+          md`
+          ~~~abell
+            <!-- Navbar.abell -->
+            <AbellComponent>
+              <nav>I am Navbar</nav>
+
+              <stylе>
+                nav {
+                  background-color: red;
+                }
+              </stylе>
+
+              <script>
+                scopedRef('nav').innerHTML = 'Client-Side Changes';
+              </script>
+            </AbellComponent>
+          ~~~
+          `
+        }}
+      </section>
+
+
+      <section>
+       {{
+          md`
+          ~~~abell
+            <!-- Navbar.abell -->
+            <AbellComponent>
+              <nav>I am Navbar</nav>
+
+              <stylе>
+                nav {
+                  background-color: red;
+                }
+              </stylе>
+
+              <script>
+                export const onMount = () => {
+                  scopedRef('nav').innerHTML = 'Client-Side Changes';
+                }
+              </script>
+            </AbellComponent>
+          ~~~
+          `
+        }}
+      </section>
+
+      <section>
+       {{
+          md`
+          ~~~abell
+            <!-- Navbar.abell -->
+            <AbellComponent>
+              <nav>I am Navbar</nav>
+
+              <stylе>
+                nav {
+                  background-color: red;
+                }
+              </stylе>
+
+              <script>
+                const [message, setMessage] = useState();
+                scopedRef('nav').innerHTML = message;
+
+                export const onMount = () => {
+                  setMessage('Client-Side Changes')
+                }
+              </script>
+            </AbellComponent>
+          ~~~
+          `
+        }}
+      </section>
+
+
+      <section>
+        <h4>New Features <span class="fragment"><span class="bold">===</span> New Syntax</span> <span class="fragment"><span class="bold">===</span> Higher Learning Curve</span></h4>
+      </section>
+
+
+      <section>
+        <div class="content-container">
+          <h2>Abell v0</h2>
+          <ul>
+            <li>Flexible</li>
+            <li>Smaller Learning Curve</li>
+            <li>Reusability, Looping, Conditions, etc</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-container">
+          <h2>Abell v0</h2>
+          <ul>
+            <li class="unchecked">Flexible</li>
+            <li class="unchecked">Smaller Learning Curve</li>
+            <li class="checked">Reusability, Looping, Conditions, etc</li>
+          </ul>
+          <img class="fragment" style="position: fixed; bottom:0px; right: 0px;" src="/banana-cat.gif" />
+        </div>
+      </section>
+
+      <section data-auto-animate>
+        <h3 style="text-align: center">How do you introduce new features, <br/>without adding to learning curve?</h3>
+      </section>
+
+      <section data-auto-animate>
+        <h3 style="text-align: center">How do you introduce new features, <br/>without adding to learning curve?</h3>
+        <p style="font-weight: 600; opacity: .6; font-size: 2rem">You let people come with their own comfort tools</p>
+      </section>
+
+      <section>
+        <h2>Abell v0</h2>
+        <ul>
+          <li>Template Engine</li>
+          <li>Static-Site-Generator</li>
+          <li>Bundler</li>
+          <li>Client-Side Framework</li>
+        </ul>
+      </section>
+
+      <section>
+        <ul>
+          <li class="checked faint">Template Engine</li>
+          <li class="checked faint">Static-Site-Generator</li>
+          <li class="unchecked">Bundler: <img style="margin: 0px;margin-bottom: -8px" height="32px" src="/vite.png" /></li>
+          <li class="unchecked">Client-Side Framework: Bring your own 🚀</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Time to Rebuild 💪🏼</h2>
+      </section>
+
+      <section data-auto-animate>
+        <div class="introducing-abell">
+          <p class="introduction-text">Introducing</p>
+          <div class="display-flex abell-heading">
+            <img src="/abell-logo.png" width="130px" alt="Abell Logo" />
+            <h1>Abell</h1>
+          </div>
+          <p class="subtitle">A Low-Level, Framework Agnostic, <br/>Vite Powered Static-Site-Generator</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Lets Build a Blog ⚡️</h2>
+        <h3 id="timer-count">00:00<h3>
+        <button class="button-primary timer">Start Timer</button><br/><br/>
+        <a style="font-weight: 400; font-size: 1.2rem" target="_blank" href="https://abelljs.org/">https://abelljs.org</a>
+      </section>
+
+
+      <section class="">
+        <h2>Thank You</h2>
+        <div class="display-flex" style="align-items: center; justify-content: centerp; width: 500px; margin: auto;">
+          <div class="flex-1">
+            <img width="150px" src="/abell-qr.png" />
+          </div>
+          <div class="flex-1">
+            <ul class="socials" style="flex-direction: column; text-align: center; width: 100%;">
+              <li><img width="20px" style="margin: 12px 0px" src="/abell-logo.png" /> abelljs.org</li>
+              <li><img width="18px" style="margin: 12px 0px" src="/github-logo.svg" /> github.com/abelljs/abell</li>
+              <li><img width="16px" style="margin: 12px 0px" src="/twitter-birb.png" /> saurabhdawaree</li>
+            </ul>
+          </div>
+        </div>
+        <img class="fixed-bottom-right" src="/happie.gif" />
+      </section>
+
+
+      <section>
+        <h2>Abell v0</h2>
+        <ul>
+          <li>Template Engine</li>
+          <li>Static-Site-Generator</li>
+          <li>
+            Bundler
+            <ul>
+              <li>Vite</li>
+              <li>Webpack</li>
+            </ul>
+          </li>
+          <li>
+            Client-Side Framework
+            <ul>
+              <li>React</li>
+              <li>Vue</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+
+
+      <section>
+        <iframe class="r-stretch" src="https://saurabhdaware.github.io/text-to-handwriting/"></iframe>
+      </section>
+
+      <section>
+        <div>
+          <img width="500px" src="/dan-tweet.png" />
+        </div>
+      </section>
+
+      <section>
+        <div class="display-flex" style="justify-content: space-around">
+          <div class="fragment" style="width: 500px">
+            {{
+              md`
+              ~~~html
+              <html>
+              <body>
+                <h1>Hello, World!</h1>
+                <script src="./app.js"></script>
+              </body>
+              </html>
+              ~~~
+              `
+            }}
+          </div>
+          <div><img width="317" src="https://github.com/saurabhdaware/saurabhdaware/assets/30949385/3e51eabf-6a96-4268-a44e-7d075c1b8037" /></div>
+        </div>
+      </section>
+
+      <section data-auto-animate>
+        <h3 id="html-heading">HTML is pretty cool, actually</h3>
+      </section>
+
+      <section data-auto-animate>
+        <h3 id="html-heading">HTML is pretty cool, actually</h3>
+        <ul>
+          <li>Easy to Get Started</li>
+          <li class="fragment">Flexible</li>
+          <li class="fragment">Smaller Learning Curve</li>
+          <li class="fragment">Super Fast</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Lets Build Everything in HTML then!!</h3>
+        <img src="/all-the-things-meme.jpeg" />
+      </section>
+
+      <section>
+        <img src="/js-vs-html-chart-usecases.svg" />
+      </section>
+
+      <section>
+        <img src="/js-vs-html-chart-final.svg" />
+      </section>
+
+      <section>
+        <img src="/js-vs-html-chart-circled.svg" />
+      </section>
+
+      <section>
+        <ul style="list-style: none">
+          <li>Can you build <span class="semibold fragment custom red" data-fragment-index="4">Documentation Site</span> in Vanilla HTML?</li>
+          <li class="fragment" data-fragment-index="1"><span class="invisible">Can you build </span><span class="semibold fragment custom red" data-fragment-index="4">Blog Site</span></li>
+          <li class="fragment" data-fragment-index="3"><span class="invisible">Can you build </span><span class="semibold fragment custom red" data-fragment-index="4">Portfolio / Landing Pages</span></li>
+          <li class="fragment" data-fragment-index="4">❌</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Missing Features in HTML 😢</h3>
+        <ul>
+          <li class="fragment">No Reusability</li>
+          <li class="fragment">MDX / MD / TS / JSX Integrations</li>
+          <li class="fragment">Plugins</li>
+          <li class="fragment">Dynamic Routing</li>
+        </ul>
+      </section>
+
+      <section data-auto-animate>
+        <div class="introducing-abell">
+          <p class="introduction-text">Introducing</p>
+        </div>
+      </section>
+
+      <section data-auto-animate>
+        <div class="introducing-abell">
+          <p class="introduction-text">Introducing</p>
+          <div class="display-flex abell-heading">
+            <img src="/abell-logo.png" width="130px" alt="Abell Logo" />
+            <h1>Abell</h1>
+          </div>
+          <p class="subtitle">A Low-Level, Framework Agnostic, <br/>Vite Powered Static-Site-Generator</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Abell is a <span class="bold">Low-Level</span> Static Site Generator</h3>
+        <aside class="notes">
+        {{ 
+          md`
+          - No Boilerplate
+          - Imports
+          - Components
+            - console log
+          `
+        }}
+        </aside>
+      </section>
+
+      <section>
+        <h3>Abell is a <span class="bold">Framework Agnostic</span> Static Site Generator</h3>
+        <div class="fragment"></div>
+      </section>
+
+      <section>
+        <img width="200px" src="/vue.png" />
+      </section>
+
+      <section>
+        <img width="200px" src="/react.webp" />
+      </section>
+
+      <section>
+        <h3>Abell is a <span class="bold">Vite Powered</span> Static Site Generator</h3>
+      </section>
+
+      <section>
+        <h3>Abell Plugins?</h3>
+      </section>
+
+      <section>
+        <h3 class="strike">Abell Plugins?</h3>
+      </section>
+
+      <section>
+        <ul>
+          <li class="fragment"><span>How to use Sitemap?</span> <code class="fragment">vite-plugin-sitemap</code></li>
+          <li class="fragment"><span>How to use Markdown?</span> <code class="fragment">vite-plugin-md-to-html</code></li>
+          <li class="fragment"><span>How to use MDX?</span> <code class="fragment">@mdx-js/rollup</code></li>
+        </ul>
+      </section>
+
+      <section>
+        {{
+          md`
+          ~~~ts
+          // vite.config.ts
+          import { defineConfig } from 'abell';
+          import mdx from '@mdx-js/rollup';
+          import { vitePluginJSXToHTML } from 'vite-plugin-jsx-to-html';
+
+          export default defineConfig({
+            plugins: [
+              mdx(), // Turns MDX to JSX
+              vitePluginJSXToHTML({ extensions: ['.mdx'] }), // Turns JSX to HTML
+            ]
+          })
+          ~~~
+          `
+        }}
+      </section>
+
+      <section>
+        {{
+          md`
+          ~~~ts
+          // vite.config.ts
+          import { defineConfig } from 'abell';
+          import mdx from '@mdx-js/rollup';
+          import { vitePluginJSXToHTML } from 'vite-plugin-jsx-to-html';
+          import rehypeSlug from 'rehype-slug';
+
+          export default defineConfig({
+            plugins: [
+              mdx({
+                rehypePlugins: [rehypeSlug]
+              }), // Turns MDX to JSX
+              vitePluginJSXToHTML({ extensions: ['.mdx'] }), // Turns JSX to HTML
+            ]
+          })
+          ~~~
+          `
+        }}
+      </section>
+
+      <section>
+        <h3>Source Plugins?</h3>
+        <div class="fragment">
+        {{
+          md`
+          ~~~ts
+          import index from './index.abell';
+          import layout from './layout.abell';
+
+          const response = await fetch('https://your-wordpress-site.com/wp-json/wp/v2/posts').then((res) => res.json());
+          const posts = response.data;
+          
+          export const makeRoutes = () => {
+            return [
+              {
+                path: '/',
+                render: () => index()
+              }
+              ...posts.map((post) => ({
+                path: post.slug,
+                render: () => layout(post.content.rendered)
+              }))
+            ]
+          }
+          ~~~
+          `
+        }}
+        </div>
+      </section>
+
+      <section>
+        <h2>Ecosystem?</h2>
+        <p class="fragment">All of JS Ecosystem 🫡</p>
+      </section>
+
+      <section>
+        <h2>And finally...</h2>
+      </section>
+
+      <section>
+        <h2>🥁</h2>
+      </section>
+
+
+      <section data-auto-animate>
+        <div class="display-flex">
+          <div data-auto-animate-id="abell-v1" class="flex-1">
+            <div class="display-flex abell-heading">
+              <img src="/abell-logo.png" width="130px" alt="Abell Logo" />
+              <h1>Abell</h1>
+            </div>
+            <h2 style="opacity: .6; display: inline-block;" data-id="v1-beta">✨ v1 beta ✨</h2>
+          </div>
+        </div>
+      </section>
+
+
+      <section data-auto-animate>
+        <div class="display-flex">
+          <div data-auto-animate-id="abell-v1" class="flex-1">
+            <div class="display-flex abell-heading">
+              <img src="/abell-logo.png" width="130px" alt="Abell Logo" />
+              <h1>Abell</h1>
+            </div>
+            <h2 style="opacity: .6; display: inline-block;" data-id="v1-beta">✨ v1 beta ✨</h2>
+            <div style="margin: 18px;"><code>npx create-abell</code></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div style="width: 200px; margin: auto;">
+          <ul class="socials" style="flex-direction: column; text-align: center; width: 100%;">
+            <li><img width="20px" style="margin: 12px 0px" src="/abell-logo.png" /> abelljs.org</li>
+            <li><img width="18px" style="margin: 12px 0px" src="/github-logo.svg" /> github.com/abelljs/abell</li>
+            <li><img width="16px" style="margin: 12px 0px" src="/twitter-birb.png" /> saurabhdawaree</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="thank-you-slide">
+        <h2>Thank You</h2>
+        <img width="400px" src="/a-very-useful-image.png" />
+      </section>
+
+      
+    </div>
+  </div>
+  <script src="/client.ts" type="module"></script>
+</body>
+</html>

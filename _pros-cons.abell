@@ -1,0 +1,74 @@
+{{
+  /** @declaration */
+  const getClass = (index) => {
+    if (props.unchecked.includes(index)) {
+      return 'unchecked';
+    }
+
+    return 'checked';
+  }
+
+  const getLogo = (logo, isActive) => {
+    if (logo === 'jekyll') {
+      return /* html */ `
+      <img class="${ isActive ? 'active' : '' }" height="48px" style="margin: 0px; margin-left: -10px" src="/jekyll.png" />
+      `
+    }
+
+    if (logo === 'gatsby') {
+      return /* html */ `
+      <img class="${ isActive ? 'active' : '' }" height="54px" style="margin: 0px" src="/gatsby.png" />
+      `
+    }
+
+    return /* html */ `<img class="${ isActive ? 'active' : '' }" height="70px" src="/html-css.webp" />`;
+  }
+}}
+
+<div class="pros-logo-container">
+  {{ 
+    ['html', 'gatsby', 'jekyll']
+      .map((logo) => getLogo(logo, logo === props.logo))
+  }}
+</div>
+
+<div class="content-container">
+  <ul>
+    <li class="{{ getClass(0) }}">Flexible</li>
+    <li class="{{ getClass(1) }}">Smaller Learning Curve</li>
+    <li class="{{ getClass(2) }}">Reusability, Looping, Conditions, etc</li>
+  </ul>
+</div>
+
+<style>
+  li {
+    margin-bottom: 18px;
+  }
+
+  .pros-logo-container {
+    margin-bottom: 50px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    gap: 64px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .content-container {
+    min-height: 250px;
+  }
+</style>
+<style scoped="false">
+  .pros-logo-container img, .pros-logo-container p {
+    opacity: 0.3;
+    filter: blur(1.4px);
+  }
+
+  .pros-logo-container img.active, .pros-logo-container  p.active {
+    opacity: 1;
+    filter: blur(0px);
+  }
+</style>
